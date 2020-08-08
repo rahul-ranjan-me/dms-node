@@ -3,10 +3,10 @@ const router = express.Router();
 const path = require('path');
 
 var documents = [
-  { id:"1", name: "Toyota", description: "Celica", uploadDate: 1596385482000, isUploadedProgress: 100, previewUrl: ['http://www.linkedin.com','http://www.linkedin.com','http://www.linkedin.com']},
-  { id:"2",name: "Ford", description: "Mondeo", uploadDate: 1596385482000, isUploadedProgress: 33, previewUrl: ['http://www.yahoo.com']},
-  { id:"3",name: "Porsche", description: "Boxter", uploadDate: 1596385482000, isUploadedProgress: 100, previewUrl: ['http://www.google.com']},
-  { id:"4",name: "Porsche", description: "Boxter", uploadDate: 1596385482000, isUploadedProgress: 100, previewUrl: ['http://www.google.com']}
+  { id:"1", name: "Toyota", description: "Celica", uploadDate: 1596385482000, isUploadedProgress: 100, previewUrl: ['document/download?filename=sample.pdf','document/download?filename=sample1.pdf','document/download?filename=sample2.pdf']},
+  { id:"2",name: "Ford", description: "Mondeo", uploadDate: 1596385482000, isUploadedProgress: 33, previewUrl: ['document/download?filename=sample4.pdf']},
+  { id:"3",name: "Porsche", description: "Boxter", uploadDate: 1596385482000, isUploadedProgress: 100, previewUrl: ['document/download?filename=sample5.xlsx']},
+  { id:"4",name: "Porsche", description: "Boxter", uploadDate: 1596385482000, isUploadedProgress: 100, previewUrl: ['document/download?filename=sample6.docx']}
 ]
 
 /* GET users listing. */
