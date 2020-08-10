@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
 const logger = require('morgan');
-
+const timeout = require('connect-timeout');
 const indexRouter = require('./routes/index');
 const documentRouter = require('./routes/document');
 
@@ -14,6 +14,12 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(timeout(1200000));
+app.use(haltOnTimedout);
+
+function haltOnTimedout(req, res, next){
+  if (!req.timedout) next();
+}
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
