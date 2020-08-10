@@ -1,6 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
 const logger = require('morgan');
@@ -15,6 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(timeout(1200000));
+app.use(bodyParser.json({limit: '500mb'}))
 app.use(haltOnTimedout);
 
 function haltOnTimedout(req, res, next){
